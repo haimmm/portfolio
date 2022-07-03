@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://kit.fontawesome.com/c29c071dd2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Haim Mizrahi</title>
+</head>
+<body>
+    <div class="flex">
+        <nav>
+            <h1 class="logo"><span class="orange">&lt</span>Haim <span class="orange">/&gt</span></h1>
+            <h2 class="subLogo orange">Web developer</h2>
+            <div class="navItem orange" name="home">
+                <i class="fa-solid fa-house"></i>
+                <div>Home</div>
+            </div>
+            <div class="navItem" name="about">
+                <i class="fa-solid fa-user"></i>
+                <div>About</div>
+            </div>
+            <div class="navItem" name="skills">
+                <i class="fa-solid fa-laptop-code"></i>
+                <div>Skills</div>
+            </div>
+            <div class="navItem" name="projects">
+                <i class="fa-solid fa-briefcase"></i>
+                <div>Projects</div>
+            </div>
+            <div class="navItem" name="contact">
+                <i class="fa-solid fa-envelope"></i>
+                <div>Contact</div>
+            </div>
+            <div class="navLinks">
+                <a href="example.com"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="example.com"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="pagesContainer" pages-container>
+                <div class="currentPage" current-page></div>
+                <div class="nextPage" next-page></div>
+                <template name="home">
+                    <div class="homePage">
+                        <p class="pageHeader">
+                            Hello,</br>
+                            <span class="font-big">
+                                My name is <span class="orange">Haim</span></br>
+                                I'm a <span class="orange">Fullstack web developer</span>.
+                            </span>
+                        </p>
+                        <p>
+                            Welcome to my portfolio! </br>
+                            This website was built as a place where</br>
+                            I can tell about myself, show what I love to do,</br>
+                            and list the tools I'm using to achieve it.
+    
+                        </p>
+                    </div>
+                </template>
+                <template name="about">
+                    <div class="aboutPage">
+                        <h3 class="font-big">My Story</h3>
+                        <p>
+                            I'm Haim, 27 years old from Tel-Aviv, Israel.</br>
+                            I bring to the table my problem solving skills, common sense, passion for technology and a lot of curiosity.</br>
+                            In recent years I have been working professionally in the IT support field while programming as a hobby.</br>
+                            Programming has always been something I wanted to get into because i think this is such an amazing tool to solve problems and express my creativity.</br>
+                        </p>
+                        <p>
+                            I learned variety of languages like C, Java and Python but now I'm mainly focused on web development.</br>
+                            I chose web because this field keeps rapidly evolving with new technologies and there is always so much to learn.</br>
+                            My coding education includes some computer science classes, bootcamp, and mostly self learning. 
+                        </p>
+                        <button class="button"><span><a href="exaple.com">Download CV</a></span></button>
+                    </div>
+                </template>
+                <template name="skills">
+                    <div class="skillsPage">
+                        <h3 class="font-big">My Skills</h3>
+                        <h4 class="orange">Frontend</h4>
+                        <ul>
+                            <li>
+                                <div class="skillRow">
+                                    <div class="skill">
+                                        <i class="fa-brands fa-html5"></i>
+                                        <span>Html,</span>
+                                    </div>
+                                    <div class="skill">
+                                        <i class="fa-brands fa-css3-alt"></i>
+                                        <span>Css,</span>
+                                    </div>
+                                    <div class="skill">
+                                        <i class="fa-brands fa-js-square"></i>
+                                        <span>Javascript</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skillRow">
+                                    <div class="skill">
+                                        <i class="fa-brands fa-react"></i>
+                                        <span>ReactJS,</span>
+                                    </div>
+                                    <div class="skill">
+                                        <i class="fa-solid fa-paintbrush"></i>
+                                        <span>MaterialUI</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <h4 class="orange">Backend</h4>
+                        <ul>
+                            <li>
+                                <div class="skillRow">
+                                        <div class="skill">
+                                            <i class="fa-brands fa-node-js"></i>
+                                            <span>NodeJS & Express</span>
+                                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skillRow">
+                                    <div class="skill">
+                                        <i class="fa-solid fa-database"></i>
+                                        <span>MongoDB & MySQL</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <h4 class="orange">Other</h4>
+                        <ul>
+                            <li>
+                                <div class="skillRow">
+                                    <div class="skill">
+                                        <i class="fa-brands fa-github"></i>
+                                        <span>Git & Github</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skillRow">
+                                    <div class="skill">
+                                        <i class="fa-brands fa-java"></i>
+                                        <span>Java</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skillRow">
+                                    <div class="skill">
+                                        <i class="fa-brands fa-python"></i>
+                                        <span>Python</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </template >
+                <template name="projects">
+                    <div class="projectsPage" projects-page>
+                        <h3 class="font-big">Projects</h3>
+                        <ul class="ProjectsContainer" >
+                            <li>
+                                <img src="images/pets.png" alt="pet adoption" name="petAdoption">
+                                <template name="petAdoption">
+                                    <div class="projectPage">
+                                        <h3 class="font-big">Pets Adoption</h3>
+                                        <h4>The stack</h4>
+                                        <p>
+                                            Frontend: ReactJS, MaterialUI, Axios</br>
+                                            Backend: NodeJS, Express, JWT</br>
+                                            Database: MongoDB
+                                        </p>
+                                        <h4>The project</h4>
+                                        <p>
+                                            Pets Adoption is my first full stack end to end web application.</br>
+                                            From the momment user clicks on a button to the CRUD operations on the database.</br>
+                                            The website is basically a pet searching platform, as a user you can adopt, foster, or just bookmark a pet.</br>
+                                            There is also an admin role, which gives you permissions to add or modify pets, and get data from the database. 
+                                        </p>
+                                        <div class="buttonsContainer">
+                                            <button class="button"><span><a href="example.com">Source</a></span></button>
+                                            <button class="button"><span><a href="example.com">Demo</a></span></button>
+                                        </div>
+                                    </div>
+                                </template>
+                            </li>
+                            <li>
+                                <img src="images/notes.png" alt="Todo app" name="todoApp">
+                                <template name="todoApp">
+                                    <div class="projectPage">
+                                        <h3 class="font-big">Todo App</h3>
+                                        <h4>The stack</h4>
+                                        <p>
+                                            Frontend: ReactJs, MaterialUI, Axios, localForage</br>
+                                            Database: Localstorage
+                                        </p>
+                                        <h4>The project</h4>
+                                        <p>
+                                            Todo app is my first react project.</br>
+                                            I know this is everyone's first web app so I tried to be original and design it as a bulletin board.</br>
+                                            In this website you can make your own notes with headers and time and all CRUD operations supported.</br>
+                                            Notes are saved locally in the browser's storage using localForage library.
+                                        </p>
+                                        <div class="buttonsContainer">
+                                            <button class="button"><span><a href="example.com">Source</a></span></button>
+                                            <button class="button"><span><a href="example.com">Demo</a></span></button>
+                                    </div>
+                                </template>
+                            </li>
+                        </ul>
+                    </div>
+                </template >
+                <template name="contact">
+                    <div class="contatcsPage">
+                        <h3 class="font-big">Contact</h3>
+                        <p>
+                            Wanna make something great together? let's talk!</br>
+                            You can Email me at <a class="orange" href="mailto:haim881994@gmail.com">haim881994@gmail.com</a> or just fill the form below.
+                        </p>
+                        <form action="" class="contactForm">
+                            <div>
+                                <input type="text" name="name" placeholder="Name" required>
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            <textarea name="message" placeholder="Message..." required></textarea></br>
+                            <button type="submit" class="button"><span>Submit</span></button>
+                        </form>
+                    </div>
+                    </div>
+                </template>    
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
