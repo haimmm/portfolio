@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+}
+
+.orange{
+    color: #f06c00
+}
+
+.font-big{
+    font-size: 3rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.flex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position:relative;
+    /* overflow:hidden; */
+}
+
+/* .button{
+    width: 150px;
+    height: 40px;
+    background-color: #f06c00;
+    border-radius: 10px;
+    color: inherit;
+} */
+
+/* .button:hover{
+    cursor: pointer;
+} */
+
+.button {
+    background: #f06c00;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.button > span {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: rgb(240, 128, 0);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.button:active > span {
+    transform: translateY(-2px);
+  }
+
+.button a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* NAV STYLES */
+nav {
+    /* background: #303030; */
+    background: #181818;
+    border-right: 2px solid #505050;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 1.5rem;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3.5rem;
+    font-family: 'Balsamiq Sans', cursive;
+    font-weight: 700;
+    margin: 20px 0 10px;
+}
+
+.subLogo{
+    margin: 0 0 100px;
+    font-size: inherit;
+}
+
+.navItem {
+    border-bottom: 2px solid #707070;
+    display: flex;
+    margin: 10px 0;
+    width: 135px;
+    padding: 0 5px;
+}
+
+.navItem > i {
+    width: 30%;
+}
+
+.navLinks{
+    margin-top: 100px;
+}
+
+.navLinks a{
+    color: inherit;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.navItem:hover, .navLinks a:hover{
+    color: #f06c00;
+    cursor: pointer;
+    transform: rotate(8deg);
+}
+
+/* CONTENT STYLES */
+.content{
+    background: rgb(32, 32, 32);
+    height: 100%;
+    flex-grow: 10;
+    position:relative;
+    overflow: hidden;
+    background-image: url('./images/background.jpg');
+}
+
+.pagesContainer{
+    height: 100%;
+    width: 200%;
+    position:absolute;
+    display: flex;
+}
+
+.currentPage, .nextPage{
+    height: 100%;
+    width: 50%;
+    padding: 100px 50px;
+}
+
+.homePage > p:first-child{
+    
+    line-height: 3rem;
+    margin-bottom: 50px;
+}
+
+
+
+.homePage > p:nth-child(2){
+    line-height: 3.5rem;
+
+}
+
+/* ABOUT PAGE */
+.aboutPage{
+    line-height: 2.3rem;
+}
+
+.aboutPage > button{
+    margin-top: 30px;
+}
+
+/* SKILLS PAGE */
+
+.skillsPage > ul{
+    list-style-type: none;
+}
+
+.skillRow{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.skill{
+    padding: 0 10px;
+}
+
+.fa-html5{
+    color: orange;
+}
+
+.fa-css3-alt{
+    color: rgb(0, 68, 255);
+}
+
+.fa-js-square{
+    color: rgb(255, 255, 7)
+}
+
+.fa-react{
+    color:aqua;
+}
+
+.fa-paintbrush{
+    color:blueviolet;
+}
+
+.fa-node-js{
+    color:darkolivegreen;
+}
+
+.fa-database{
+    color:cadetblue;
+}
+
+
+/* PROJECTS PAGE */
+.projectsPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ProjectsContainer{
+    /* border: 1px solid red; */
+    width: 60%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;   
+    list-style: none; 
+    position: relative;
+
+}
+
+.ProjectsContainer > li{
+    width: 270px;
+    height: 180px;   
+    overflow: hidden;
+    border: 3px solid rgba(185, 183, 183, 0.199);
+    border-radius: 10px;
+    transition: all 0.6s;
+}
+
+.ProjectsContainer > li:hover{
+    border: 3px solid white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.ProjectsContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+/* PROJECT PAGE */
+
+.buttonsContainer{
+    width: 30%;
+    margin: 50px auto;
+    display: flex;
+    justify-content:space-between;
+}
+
+/* CONTACT */
+.contatcsPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+
+.contactForm textarea, .contactForm input {
+    background-color: #383838;
+    color: inherit;
+    resize: none;
+    border: 1px solid #f06c00;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+.contactForm > div{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    margin: 20px;
+}
+.contactForm input{
+    width: 40%;
+    height: 40px;  
+}
+
+.contactForm textarea{
+    width: 100%;
+    height: 300px;
+}
+
+::placeholder, ::-ms-input-placeholder{
+    color: white;
+}
