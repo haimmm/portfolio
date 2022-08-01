@@ -1,0 +1,72 @@
+/* Phone styles */
+@media only screen and (max-width: 999px) {
+    .font-big{
+        font-size: 2rem;
+    }
+
+    body{
+        height: auto;
+    }
+
+    .flex{
+        position: static;
+    }
+
+    nav{
+        display:none;
+    }
+
+    /* .content{
+        width: 100%;
+        position:static;
+    } */
+
+    .pagesContainer{
+        width: 100%;
+        position: static;
+    }
+
+    .nextPage{
+        display: none;
+    }
+
+    .currentPage{
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    /* HOME PAGE */
+    .homePage > p:nth-child(2), .aboutPage{
+        line-height: 2.5rem;
+    
+    }
+
+    /* PROJECTS */
+    .ProjectsContainer{
+        /* border: 1px solid red; */
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none; 
+        position: relative;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    /* PROJECTS */
+    .ProjectsContainer > li:hover{
+        border: 3px solid white;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    .ProjectsContainer img {
+        height: 100%;
+    }
+
+    .mobileProjectButtons{
+        display: none;
+    }
+}

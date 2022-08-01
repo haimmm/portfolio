@@ -2,42 +2,55 @@ const pagesContainer = document.querySelector("[pages-container]");
 const currentPage = document.querySelector("[current-page]");
 const nextPage = document.querySelector("[next-page]");
 
+const MIN_WIDTH_DESKTOP_MODE = 1000;
+
 let pagesTemplates = [...document.getElementsByTagName('template')];
 const navLinks = [...document.getElementsByClassName('navItem')];
 
 const getByAttribute = (list, key, value) => list.find(t => t.getAttribute(key) === value).content;
 
-//INIT
-currentPage.appendChild(getByAttribute(pagesTemplates, 'name','home').cloneNode(true));
-nextPage.appendChild(getByAttribute(pagesTemplates, 'name','home').cloneNode(true));
+//animations
+const fadeOut = (element, distance, duration, direction) => {
+    const effect = {};
+    switch(direction){
+        case 'up':
+            effect.transform = `translateY(${-distance}px)`
+            break;
+        case 'down':
+            effect.transform = `translateY(${distance}px)`
+            break;
+        case 'right':
+            effect.transform = `translateX(${distance}px)`
+            break;
+        case 'left':
+            effect.transform = `translateX(${-distance}px)`
+            break;
+        default:
+            console.error("bad argument at fadeOut direction argument")
+    }
+    
+    const options = {
+        duration,
+        iterations: 1,
+    }
 
-
-const animation = [
-    {left: '0'},
-    {left: '-100%'}
-];
-
-const options = {
-    duration: 800,
-    iterations: 1,
+    const animation = element.animate([effect], options);
+    setTimeout(() => animation.pause(), duration*0.9);    
 }
 
-navLinks.forEach(link => {
-    link.onclick = e => {
-        const pageName = e.currentTarget.getAttribute('name');
-        const pageTemplate = getByAttribute(pagesTemplates, 'name', pageName);
-        if(pageTemplate.firstElementChild.className !== currentPage.firstElementChild.className){
-            navLinks.find(link => link.classList.contains('orange')).classList.remove('orange');
-            link.classList.add('orange');
-            nextPage.replaceChild(pageTemplate.cloneNode(true), nextPage.firstElementChild);
-            pagesContainer.animate(animation, options).finished
-            .then(() => {
-                currentPage.replaceChild(pageTemplate.cloneNode(true), currentPage.firstElementChild);
-                if(pageName === 'projects') handleProjectsPage();
-            });
-        }
+const fadeLeft = {
+    animation: [
+        {left: '0'},
+        {left: '-100%'}
+    ],
+    options: {
+        duration: 800,
+        iterations: 1,
     }
-});
+}
+
+
+
 
 
 //ON PROJECT PAGE ENTER
@@ -74,33 +87,31 @@ const handleProjectsPage = () => {
     };
 }
 
-
-
-const fadeOut = (element, distance, duration, direction) => {
-    const effect = {};
-    switch(direction){
-        case 'up':
-            effect.transform = `translateY(${-distance}px)`
-            break;
-        case 'down':
-            effect.transform = `translateY(${distance}px)`
-            break;
-        case 'right':
-            effect.transform = `translateX(${distance}px)`
-            break;
-        case 'left':
-            effect.transform = `translateX(${-distance}px)`
-            break;
-        default:
-            console.error("bad argument at fadeOut direction argument")
+//nav listeners
+navLinks.forEach(link => {
+    link.onclick = e => {
+        const pageName = e.currentTarget.getAttribute('name');
+        const pageTemplate = getByAttribute(pagesTemplates, 'name', pageName);
+        if(pageTemplate.firstElementChild.className !== currentPage.firstElementChild.className){
+            navLinks.find(link => link.classList.contains('orange')).classList.remove('orange');
+            link.classList.add('orange');
+            nextPage.replaceChild(pageTemplate.cloneNode(true), nextPage.firstElementChild);
+            pagesContainer.animate(fadeLeft.animation, fadeLeft.options).finished
+            .then(() => {
+                currentPage.replaceChild(pageTemplate.cloneNode(true), currentPage.firstElementChild);
+                if(pageName === 'projects') handleProjectsPage();
+            });
+        }
     }
-    
-    const options = {
-        duration,
-        iterations: 1,
-    }
+});
 
-    const animation = element.animate([effect], options);
-    setTimeout(() => animation.pause(), duration*0.9);
-     
+//INIT
+if(window.innerWidth >= MIN_WIDTH_DESKTOP_MODE){
+    currentPage.appendChild(getByAttribute(pagesTemplates, 'name','home').cloneNode(true));
+    nextPage.appendChild(getByAttribute(pagesTemplates, 'name','home').cloneNode(true));
+}else{
+    pagesTemplates.forEach(page => {
+        currentPage.appendChild(page.content.cloneNode(true));
+    });
 }
+
